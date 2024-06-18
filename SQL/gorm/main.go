@@ -3,11 +3,10 @@ package main
 import (
 	"fmt"
 
+	"github.com/ra1n6ow/go-demo/SQL/gorm/relations"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
-
-	"github.com/ra1n6ow/go-demo/SQL/gorm/advanced"
 )
 
 func main() {
@@ -27,7 +26,7 @@ func main() {
 		panic("failed to connect database")
 	}
 
-	// db.AutoMigrate(&model.Student{})
+	// db.AutoMigrate(&model.UserModel{}, &model.RoleModel{}, &model.UserRoleModel{})
 
 	// One
 	// one.InsertOne(db)
@@ -38,5 +37,12 @@ func main() {
 	// advanced.InitData(db)
 	// advanced.Query(db)
 	// advanced.Select(db)
-	advanced.Other(db)
+	// advanced.Other(db)
+	// relations.Create(db)
+	// relations.ForeignKey(db)
+	// relations.Query(db)
+	// relations.Delete(db)
+	// relations.CreateMany(db)
+	// relations.QueryMany(db)
+	relations.UpdateMany(db)
 }
